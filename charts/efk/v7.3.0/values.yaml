@@ -5,7 +5,7 @@ elasticsearch:
   enabled: true
   image: "ranchercharts/elasticsearch-elasticsearch"
   imageTag: "7.3.0"
-  enableProxy: true
+  enableProxy: false
 
 kibana:
   enabled: true

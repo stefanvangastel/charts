@@ -7,25 +7,10 @@ elasticsearch:
   imageTag: "7.3.0"
   enableProxy: true
 
-
 kibana:
   enabled: true
   image: "ranchercharts/kibana-kibana"
   imageTag: "7.3.0"
-
-filebeat:
-  enabled: true
-  image: "ranchercharts/beats-filebeat"
-  imageTag: "7.3.0"
-
-metricbeat:
-  enabled: true
-  image: "ranchercharts/beats-metricbeat"
-  imageTag: "7.3.0"
-  kube-state-metrics:
-    image:
-      repository: ranchercharts/coreos-kube-state-metrics
-      tag: v1.7.2
 
 global:
   nginxProxy:

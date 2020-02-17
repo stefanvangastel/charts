@@ -6,11 +6,3 @@ dependencies:
     version: 7.3.0
     condition: kibana.enabled
     repository: file://./charts/kibana
-  - name: filebeat
-    version: 7.3.0
-    condition: filebeat.enabled
-    repository: file://./charts/filebeat
-  - name: metricbeat
-    version: 7.3.0
-    condition: metricbeat.enabled
-    repository: file://./charts/metricbeat

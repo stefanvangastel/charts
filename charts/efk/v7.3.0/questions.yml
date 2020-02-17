@@ -70,18 +70,8 @@ questions:
   group: "Elasticsearch Config"
   min: 3
   max: 99
-- variable: elasticsearch.antiAffinity
-  default: "hard"
-  description: "Config elasticsearch pod antiAffinity type"
-  type: enum
-  label: Config Elasticsearch Pod AntiAffinity Type
-  required: true
-  group: "Elasticsearch Config"
-  options:
-  - "hard"
-  - "soft"
 - variable: elasticsearch.service.type
-  default: "ClusterIP"
+  default: "NodePort"
   description: "ElasticSearch service type"
   type: enum
   label: ElasticSearch Service Type
@@ -90,6 +80,16 @@ questions:
   options:
   - "ClusterIP"
   - "NodePort"
+- variable: elasticsearch.antiAffinity
+  default: "soft"
+  description: "Config elasticsearch pod antiAffinity type"
+  type: enum
+  label: Config Elasticsearch Pod AntiAffinity Type
+  required: true
+  group: "Elasticsearch Config"
+  options:
+  - "hard"
+  - "soft"
 - variable: elasticsearch.persistence.enabled
   default: false
   description: "Enable persistent volume for elasticsearch"

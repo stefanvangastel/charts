@@ -5,7 +5,7 @@ elasticsearch:
   enabled: true
   image: "ranchercharts/elasticsearch-elasticsearch"
   imageTag: "7.3.0"
-  enableProxy: true
+  enableProxy: false
 
 
 kibana:
@@ -13,21 +13,3 @@ kibana:
   image: "ranchercharts/kibana-kibana"
   imageTag: "7.3.0"
 
-filebeat:
-  enabled: true
-  image: "ranchercharts/beats-filebeat"
-  imageTag: "7.3.0"
-
-metricbeat:
-  enabled: true
-  image: "ranchercharts/beats-metricbeat"
-  imageTag: "7.3.0"
-  kube-state-metrics:
-    image:
-      repository: ranchercharts/coreos-kube-state-metrics
-      tag: v1.7.2
-
-global:
-  nginxProxy:
-    repository: rancher/nginx
-    tag: 1.15.8-alpine

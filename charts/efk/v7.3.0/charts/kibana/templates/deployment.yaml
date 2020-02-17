@@ -73,6 +73,25 @@ spec:
 {{ toYaml .Values.imagePullSecrets | indent 8 }}
     {{- end }}
       containers:
+      - name: kibana-proxy
+        image: {{ .Values.global.nginxProxy.repository }}:{{ .Values.global.nginxProxy.tag }}
+        args:
+        - nginx
+        - -g
+        - daemon off;
+        - -c
+        - /nginx/nginx.conf
+        ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+        volumeMounts:
+        - name: kibana-nginx
+          mountPath: /nginx/
+        {{- if and .Values.resources .Values.resources.proxy }}
+        resources:
+{{ toYaml .Values.resources.proxy | indent 10 }}
+        {{- end }}
       - name: kibana
         securityContext:
 {{ toYaml .Values.securityContext | indent 10 }}

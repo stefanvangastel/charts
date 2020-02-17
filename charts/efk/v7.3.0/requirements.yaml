@@ -5,8 +5,4 @@ dependencies:
   - name: kibana
     version: 7.3.0
     condition: kibana.enabled
-<<<<<<< HEAD
-    repository: file://./charts/kibana
-=======
-    repository: file://./charts/kibana
->>>>>>> a01738d255a73cd9c82339536da20e5c0e02a02b
+      repository: file://./charts/kibana

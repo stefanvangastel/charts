@@ -55,7 +55,7 @@ questions:
   - "ClusterIP"
   - "NodePort"
 - variable: kibana.enableProxy
-  default: true
+  default: false
   description: "Expose kibana using nginx proxy"
   type: boolean
   label: Expose Kibana using Nginx Proxy
@@ -80,6 +80,16 @@ questions:
   options:
   - "hard"
   - "soft"
+- variable: elasticsearch.service.type
+  default: "ClusterIP"
+  description: "ElasticSearch service type"
+  type: enum
+  label: ElasticSearch Service Type
+  required: true
+  group: "Elasticsearch Config"
+  options:
+  - "ClusterIP"
+  - "NodePort"
 - variable: elasticsearch.persistence.enabled
   default: false
   description: "Enable persistent volume for elasticsearch"

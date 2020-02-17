@@ -23,25 +23,3 @@ spec:
   selector:
     app: {{ .Chart.Name }}
     release: {{ .Release.Name | quote }}
-{{- if .Values.enableProxy }}
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: kibana-http
-  namespace: {{ .Release.Namespace }}
-  labels:
-    app: {{ .Chart.Name }}
-    release: {{ .Release.Name | quote }}
-    heritage: {{ .Release.Service }}
-    kubernetes.io/cluster-service: "true"
-spec:
-  type: ClusterIP
-  ports:
-    - name: http-access-kibana
-      protocol: TCP
-      port: 80
-  selector:
-    app: {{ .Chart.Name }}
-    release: {{ .Release.Name | quote }}
-{{- end }}
